@@ -93,10 +93,6 @@ var startGame = function() {
         break;
         }
     }
-
-    // play again
-    startGame();
-
     //after loop ends, player is either out fo health or enemies to fight so run the endGame function
     endGame();
 };
@@ -125,3 +121,4 @@ var endGame = function() {
     }
 };
 
+startGame();
