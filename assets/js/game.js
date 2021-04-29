@@ -25,11 +25,29 @@ var fightOrSkip = function() {
     return false;
 }
 
+
+
 //fight function 
 var fight = function(enemy) {
+    
+    //keep track of who goes first
+    var isPlayerTurn = true;
+
+    if(Math.random() > .5) {
+        isPlayerTurn = false;
+    }
+
+    
     //repeat and execute as long as the enemy is alive
     while(playerInfo.health > 0 && enemy.health > 0) {
        
+        if (isPlayerTurn) {
+            //ask player if they's like to fight or skip
+            if(fightOrSkip) {
+                break;
+            }
+        }
+        
         //fight or skip round  
         fightOrSkip();
 
