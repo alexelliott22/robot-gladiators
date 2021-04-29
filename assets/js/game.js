@@ -1,5 +1,4 @@
 
-
 var fightOrSkip = function() {
     //ask player if they'd like to fight or skip using fightOrSkip function 
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -137,8 +136,10 @@ var endGame = function() {
 //go to shop between battles
 var shop = function() {
     var shopOptionPrompt = window.prompt(
-        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one: 'REFILL', 'UPGRADE', or 'LEAVE' to make a choice."
+        "Would you like to REFILL your health, UPGRADE your attack, or LEAVE the store? Please enter one 1 for REFILL, 2 for UPGRADE, or  3 for LEAVE to make a choice."
     );
+
+    shopOptionPrompt = parseInt(shopOptionPrompt);
 
     //use switch case to carry out action
     switch (shopOptionPrompt) {
@@ -156,6 +157,7 @@ var shop = function() {
             break;
         default:
             window.alert("You did not pick a valid option. Try again.");
+            shop();
             break;
             
     }
@@ -220,3 +222,4 @@ var enemyInfo = [{
 
 // start first game when page loads
 startGame();
+
